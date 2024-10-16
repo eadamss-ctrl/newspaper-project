@@ -1,0 +1,270 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body settings */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+    margin: 0;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a1a;
+    color: white;
+    padding: 20px 50px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header .logo h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+    color: white;
+}
+
+/* Navigation */
+nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+    header {
+        padding: 10px 20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        display: none;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px 15px;
+    }
+
+    nav a {
+        font-size: 1rem;
+    }
+
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+}
+
+
+/* Main Layout */
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 40px 50px;
+}
+/* Hover Effect for Article Titles in Each Category */
+.category article h4 a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: color 0.3s ease, text-decoration 0.3s ease;  /* Smooth transition */
+}
+
+.category article h4 a:hover {
+    color: #007BFF;  /* Change to the primary blue color on hover */
+    text-decoration: underline;  /* Add underline to indicate interactivity */
+}
+
+/* Featured Article */
+.featured-article {
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    margin: 20px auto;
+    max-width: 1200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.featured-article img {
+    width: 50%;
+    height: auto;
+}
+
+.featured-content {
+    padding: 40px;
+}
+
+.featured-content h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.featured-content p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+.featured-content a {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.featured-content a:hover {
+    background-color: #0056b3;
+}
+/* News Categories */
+.news-categories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    gap: 30px;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.category {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Layout */
+@media (max-width: 1024px) {
+    .news-categories {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .news-categories {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .category {
+        padding: 20px; /* Reduce padding on very small screens */
+    }
+}
+
+
+.category h3 {
+    color: #007BFF;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.category article h4 a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.category article p {
+    color: #666;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    display: block;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Centers the list items horizontally */
+    gap: 20px; /* Adds space between each list item */
+}
+
+footer ul li {
+    margin: 0 10px;
+}
+
+footer ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem; /* Optional: adjust the font size */
+}
+
+footer ul li a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+        display: none;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+}
